@@ -1,13 +1,28 @@
 #include <iostream>
 #include <array>
+
+void BubbleSort(int a[], int size){
+    for(int i=size-1;i>0;i++){
+        for(int j=0;j<i;i++){
+            if(a[j]>a[j+1]){
+                int temp=a[j];
+                a[j]=a[j+1];
+                a[j+1]=temp;
+            }
+
+        }
+
+    }
+}
+
 int main(){
 
 int arr[4]={1,2,3,4};
+int size=sizeof(arr)/sizeof(arr[0]);
+BubbleSort(arr, size);
 
-std::array<int,4> a={1,2,3,400};
-
-std::cout<<a.at(0)<<std::endl;
-std::cout<<"back"<<a.back()<<std::endl;
-std::cout<<"front"<<a.front()<<std::endl;
+for(int i: arr){
+    std::cout << i << std::endl;
+}
     return 0;
 }
